@@ -1,0 +1,21 @@
+{
+  "name": "todobackend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "\"# (7 DAYS REVISION) TodoBackend : Restful todoapi with nodejs and express \"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOK-TAN/TodoBackend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MOK-TAN/TodoBackend/issues"
+  },
+  "homepage": "https://github.com/MOK-TAN/TodoBackend#readme"
+}

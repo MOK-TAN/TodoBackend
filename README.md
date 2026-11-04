@@ -1,2 +1,2 @@
-"# (7 DAYS REVISION) TodoBackend"
+"# (JAVASCRIPT REVISION) TodoBackend"
 

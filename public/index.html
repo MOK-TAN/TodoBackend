@@ -83,7 +83,9 @@
                 body: JSON.stringify({title})
             });
 
-            const result = await response.text();
+            const result = await response.json();
+
+            message.textContent = `Todo created: ${result.title}`;
 
             message.textContent = result;
             input.value = '';

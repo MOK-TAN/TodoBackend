@@ -3,6 +3,8 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 
+const todos = [];
+
 const server = http.createServer((req, res) => {
 
     console.log(req.method, req.url);
@@ -30,6 +32,36 @@ const server = http.createServer((req, res) => {
 
         return;
     }
+
+    if (req.method === 'POST' && req.url === '/todos') {
+
+    let body = '';
+
+    req.on('data', (chunk) => {
+        body += chunk;
+    });
+
+    req.on('end', () => {
+
+        const data = JSON.parse(body);
+
+        const newTodo = {
+            id: todos.length + 1,
+            title: data.title,
+            completed: false
+        };
+
+        todos.push(newTodo);
+
+        res.statusCode = 201;
+        res.setHeader('Content-Type', 'application/json');
+
+        res.end(JSON.stringify(newTodo));
+
+    });
+
+    return;
+}
 
     res.statusCode = 404;
     res.end('Route not found');
